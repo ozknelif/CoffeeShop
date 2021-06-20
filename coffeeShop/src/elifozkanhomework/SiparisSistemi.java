@@ -31,6 +31,7 @@ public class SiparisSistemi {
 		try 
 		{
 			int urunNo = kullaniciGirisi.nextInt();
+			this.kahveHazirla(urunNo);
 		}
 		catch (Exception e) 
 		{
@@ -43,6 +44,19 @@ public class SiparisSistemi {
 		
 	}
 	
+	public void kahveHazirla(int urunNo) {
+			
+		if (urunNo < 1 || urunNo > this.getUrunler().size()) 
+		{
+			this.hataMesajiGoster();
+		}
+		else 
+		{
+			System.out.println("Teþekkürler kahveniz hazýrlanýyor.\n");
+			System.out.println(this.getUrunler().get(urunNo - 1).toString());
+		}
+			
+	}
 	
 	
 	public void menuGoster() {
